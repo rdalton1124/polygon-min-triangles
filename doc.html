@@ -1,0 +1,36 @@
+<html>
+	<head> 
+		<title> Documentation </title>
+	</head>
+	<body>
+		<h1> Purpose </h1> 
+		<p> The goal of this project is to create a regular polygon using the minium number of triangles. 
+		This would be helpful in a 3-D environment where you want to make polygons for the sides of a specific object. 
+		This is advantegous over the 'standard' algorithm of repeatedly creating triangle with a corner, adjacent corner and the center because 
+			<ul>
+				<li> There are less triangles. A n-sided polygon can be made with n - 2 triangles. </li>
+				<li> There is no need to keep track of the center. This especially useful if you want the angles to be on a sphere but the center is not necessarily on said sphere </li>
+			</ul>
+		</p>
+		<h1> Algorithm </h1>
+		<p> The general alogrithm is as follows. 
+			<ul>
+				<li> Start with an array of corner positions. </li> 
+				<li> Start at a corner C. </li>
+				<li> Create a triangle out of C - C + 1 - C + 2 where C + 1 is the corner directly to the right of C and so on. </li>
+				<li> Remove C + 1 from the array. </li> 
+				<li> If there are more than 3 corners left, call the algorithm with the remaining </li> 
+			</ul>
+		</p>
+		<h1> Vs. Existing Algorithms.</h1>
+		<p> I had created this without outside help because I wanted to wrack my brain a little. After looking it up, it turns out that n - 2 is generally the right numberr of triangles. However, there is a simpler, iterative algorithm, which goes as follows. 
+			<ul>
+				<li> Pick a corner C to be the 'base' corner. </li>
+				<li> Create a triangle C - C + 1 - C + 2 where the notation is the same as before. </li>
+				<li> Create a triangle C - C + 2 - C + 3. </li>
+				<li> Go on until you have a triangle C - C-1 - C-2 </li>
+			</ul>
+		</p>
+		<a href='index.html'><button> Homepage </button></a>
+	</body>
+</html>
